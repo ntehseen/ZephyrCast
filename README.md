@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
 
-First, run the development server:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# ZephyrCast
+
+![App Image](path/to/your/image.png)
+
+ZephyrCast is a visually appealing weather forecasting application that provides users with real-time weather updates, detailed forecasts, and an elegant dark theme inspired by iOS/macOS aesthetics. The app utilizes the OpenWeatherMap API to fetch weather data and presents it with beautiful 3D glass effects and modern color schemes.
+
+## Features
+
+- Real-time weather updates for any location.
+- Detailed daily and weekly forecasts.
+- Elegant dark theme with 3D glass effects.
+- Responsive design for a seamless experience across devices.
+
+## Tech Stack
+
+- **React**: A JavaScript library for building user interfaces.
+- **Next.js**: A React framework for server-side rendering and generating static websites.
+- **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
+- **Axios**: A promise-based HTTP client for the browser and Node.js.
+- **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
+- **React Query**: A library for fetching, caching, and updating asynchronous data in React.
+- **date-fns**: A modern JavaScript date utility library.
+
+## Installation
+
+1. **Clone the repository**:
+   ```sh
+   git clone https://github.com/ntehseen/zephyrcast.git
+   cd zephyrcast
+   ```
+
+2. **Install dependencies**:
+   ```sh
+   npm install
+   ```
+
+3. **Set up environment variables**:
+   Create a `.env.local` file in the root directory and add your OpenWeatherMap API key:
+   ```plaintext
+   NEXT_PUBLIC_WEATHER_KEY='your_openweathermap_api_key'
+   ```
+
+4. **Run the development server**:
+   ```sh
+   npm run dev
+   ```
+
+   Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+## Project Structure
+
+```
+├── components
+│   ├── Container.tsx
+│   ├── ForecastWeatherDetail.tsx
+│   ├── Navbar.tsx
+│   ├── WeatherDetails.tsx
+│   ├── WeatherIcon.tsx
+├── pages
+│   ├── api
+│   ├── index.tsx
+├── public
+│   ├── favicon.ico
+│   ├── vercel.svg
+├── styles
+│   ├── CustomStyles.module.css
+├── utils
+│   ├── convertKelvinToCelsius.ts
+│   ├── convertWindSpeed.ts
+│   ├── getDayOrNightIcon.ts
+│   ├── metersToMiles.ts
+├── .env.local
+├── next.config.js
+├── package.json
+├── README.md
+├── tsconfig.json
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Custom Styles
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+In the `styles` directory, you can find the `CustomStyles.module.css` file, which contains custom CSS for hiding the scrollbar:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```css
+/* CustomStyles.module.css */
+.noScrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
 
-## Learn More
+.noScrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, and Opera */
+}
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+To use the custom scrollbar styles, import the CSS module and apply the class to the desired element in your component:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```jsx
+import styles from '@/styles/CustomStyles.module.css';
 
-## Deploy on Vercel
+<div className={`flex gap-10 sm:gap-16 overflow-x-auto w-full justify-between pr-3 ${styles.noScrollbar}`}>
+  <!-- Your content here -->
+</div>
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Acknowledgements
+
+- [OpenWeatherMap](https://openweathermap.org/) for providing the weather data API.
+- [Tailwind CSS](https://tailwindcss.com/) for the utility-first CSS framework.
+- [Next.js](https://nextjs.org/) for the powerful React framework.
+- [React Query](https://react-query.tanstack.com/) for data-fetching and caching.
+- [date-fns](https://date-fns.org/) for modern JavaScript date utilities.
+
