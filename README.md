@@ -3,7 +3,7 @@
 
 # ZephyrCast
 
-![App Image](path/to/your/image.png)
+![App Image](zephyrCast-preview.png)
 
 ZephyrCast is a visually appealing weather forecasting application that provides users with real-time weather updates, detailed forecasts, and an elegant dark theme inspired by iOS/macOS aesthetics. The app utilizes the OpenWeatherMap API to fetch weather data and presents it with beautiful 3D glass effects and modern color schemes.
 
